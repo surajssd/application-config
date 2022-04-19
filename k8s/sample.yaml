@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: web
-  name: web
+  name: web1
   namespace: default
 spec:
   replicas: 1

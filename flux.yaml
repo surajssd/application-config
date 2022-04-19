@@ -5,16 +5,9 @@ metadata:
   namespace: default
 spec:
   interval: 5m
-  url: https://github.com/my-org/my-app
+  url: https://github.com/surajssd/test-flux
   ref:
-    branch: main
-  ignore: |
-    # exclude all
-    /*
-    # include deploy dir
-    !/deploy
-    # exclude non-Kubernetes YAMLs
-    /deploy/**/.yamllint.yaml
+    commit: f0138263b8b9a1f3dda0db6e1bbb7ea055cc6221
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -23,7 +16,7 @@ metadata:
   namespace: default
 spec:
   interval: 15m
-  path: "./deploy/prod"
+  path: "./k8s"
   prune: true
   sourceRef:
     kind: GitRepository

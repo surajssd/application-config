@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app: web
-  name: web1
-  namespace: default
+  name: web
+  namespace: web
 spec:
   replicas: 1
   selector:
@@ -16,5 +16,5 @@ spec:
         app: web
     spec:
       containers:
-      - image: nginx
+      - image: nginx:1.17.10
         name: nginx
